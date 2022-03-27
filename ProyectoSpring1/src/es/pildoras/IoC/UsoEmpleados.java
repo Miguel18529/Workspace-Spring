@@ -23,9 +23,30 @@ public class UsoEmpleados{
 		//Para generar objetos de distinto tipo, solo hemos tenido que cambiar el xml
 		//INVERSION OF CONTROL
 		
-		Empleados miguel = contexto.getBean("miEmpleado", Empleados.class);
+		DirectorEmpleado miguel = contexto.getBean("miEmpleado", DirectorEmpleado.class);
 		
 		System.out.println(miguel.getTareas());
+		
+		System.out.println(miguel.getInforme());
+		
+		System.out.println(miguel.getEmail());
+		
+		System.out.println(miguel.getNombreEmpresa());
+		
+		/*SecretarioEmpleado Maria = contexto.getBean("miSecretarioEmpleado", SecretarioEmpleado.class);
+		
+		SecretarioEmpleado Pablo = contexto.getBean("miSecretarioEmpleado", SecretarioEmpleado.class);
+		
+		System.out.println(Maria.getTareas());
+		
+		System.out.println(Maria.getInforme());
+		
+		System.out.println("Email: " + Maria.getEmail());
+		
+		System.out.println(Maria.getNombreEmpresa());
+		
+		System.out.println("Email Pablo: " + Pablo.getEmail());\
+		*/
 		
 		contexto.close();
 		

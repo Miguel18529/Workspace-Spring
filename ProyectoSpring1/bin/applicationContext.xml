@@ -9,10 +9,36 @@
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
 
-<bean id="miEmpleado" class="es.pildoras.IoC.JefeEmpleado">
+<!-- Cargamos las propiedades del fichero -->
+<context:property-placeholder location="classpath:datosEmpresa.propiedades"/>
+
+<!--  creación de la dependencia -->
+<bean id="miInforme" class = "es.pildoras.IoC.Informe">
 
 
 
+</bean>
+
+<!--  Con constructor -->
+<bean id="miEmpleado" class="es.pildoras.IoC.DirectorEmpleado">
+
+	<constructor-arg ref="miInforme"></constructor-arg>
+	
+	<!-- usamos el $ porque lo sacamos del fichero -->
+	<property name="email" value="${email}"></property>
+	
+	<property name="nombreEmpresa" value="${nombreEmpresa}"></property>
+
+</bean>
+
+<!-- Con setter -->
+<bean id="miSecretarioEmpleado" class="es.pildoras.IoC.SecretarioEmpleado">
+	<!--  se usa el nomrbe del setter eliminando el "set" y la primera en minuscula -->
+	<property name="informeNuevo" ref="miInforme"></property>
+	
+	<property name="email" value="secretaria@pildorasinformaticas.es"></property>
+	
+	<property name="nombreEmpresa" value="Piloras Informaticas"></property>
 </bean>
 
 </beans>
