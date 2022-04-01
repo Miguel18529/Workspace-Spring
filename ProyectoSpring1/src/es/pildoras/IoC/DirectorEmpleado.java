@@ -40,5 +40,22 @@ public class DirectorEmpleado implements Empleados {
 		// TODO Auto-generated method stub
 		return "Informe creado por el Director: " + informeNuevo.getInforme();
 	}
+	
+	//Crear metodo init. Ejecutar tareas antes de que el Bean este disponible
+	//Normalmente es void, pero no siempre
+	public void metodoInicial() {
+		//Todas las tareas a ejecutar antes de tener disponible el Bean DirectorEmpleado
+		
+		System.out.println("Dentro del método init aquí irían las tareas a ejecutar " + 
+							" antes de que el Bean esté listo");
+	}
+	
+	//Metodo destroy. Ejecutar tareas despues de que el Bean sea utilizado
+	public void metodoFinal() {
+		//Todas las tareas a ejecutar despues de la muerte del Bean DirectorEmpleado
+		
+		System.out.println("Dentro del método destroy aquí irían las tareas a ejecutar " + 
+							" después de que el Bean muera");
+	}
 
 }
