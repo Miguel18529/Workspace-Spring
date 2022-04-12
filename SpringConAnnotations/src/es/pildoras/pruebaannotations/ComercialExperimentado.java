@@ -1,20 +1,43 @@
 package es.pildoras.pruebaannotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
 
 //Con esta anotacion, Spring registra el Bean
 //Si no pones los parentesis, usa el nombre de la clase con la primera letra en minus
 @Component("ComercialExperimentado")
+@Scope("prototype")
 public class ComercialExperimentado implements Empleados{
 	
-	private CreacionInformeFinanciero nuevoInforme;
+	/*//ejecución de código después de creación del Bean
+	//Reemplaza a init
+	public void ejecutaDespuesCreacion() {
+		System.out.println("Ejecutado tras creación de Bean");
+	}
 	
-	@Autowired
+	//ejecución de código después de apagado contenedor Spring
+	//Reemplaza a Destroy
+	public void ejecutaAntesDestruccion() {
+		System.out.println("Ejecutando antes de la destrucción");
+	}*/
+	
+	public ComercialExperimentado() {
+		
+	}
+	/*@Autowired
 	public ComercialExperimentado(CreacionInformeFinanciero nuevoInforme) {
 		this.nuevoInforme = nuevoInforme;
 	}
-
+*/
+	
+	/*@Autowired
+	public void setNuevoInforme(CreacionInformeFinanciero nuevoInforme) {
+		this.nuevoInforme = nuevoInforme;
+	}
+	*/
 	@Override
 	public String getTareas() {
 		// TODO Auto-generated method stub
@@ -27,8 +50,12 @@ public class ComercialExperimentado implements Empleados{
 		//return "Informe generado por el comercial";
 		return nuevoInforme.getInformeFinanciero();
 	}
+
 	
 	
+	@Autowired
+	@Qualifier("informeFinancieroTrim2") //Beaan id que debe usar
+	private CreacionInformeFinanciero nuevoInforme;
 	
 
 }
