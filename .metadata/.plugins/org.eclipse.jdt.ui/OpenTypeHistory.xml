@@ -2,4 +2,6 @@
 <typeInfoHistroy>
     <typeInfo handle="=ProyectoSpring1/src&lt;es.pildoras.IoC{CreacionInformes.java[CreacionInformes" modifiers="513" timestamp="1648391095372"/>
     <typeInfo handle="=SpringConAnnotations/src&lt;es.pildoras.pruebaannotations{CreacionInformeFinanciero.java[CreacionInformeFinanciero" modifiers="513" timestamp="1648835835652"/>
+    <typeInfo handle="=SpringConAnnotations/src&lt;es.pildoras.pruebaannotations{Empleados.java[Empleados" modifiers="513" timestamp="1648833958358"/>
+    <typeInfo handle="=SpringConAnnotations/libs\/spring-jdbc-5.3.9.jar&lt;org.springframework.jdbc.datasource.embedded(EmbeddedDatabaseConfigurer.class[EmbeddedDatabaseConfigurer" modifiers="1537" timestamp="1643565630837"/>
 </typeInfoHistroy>

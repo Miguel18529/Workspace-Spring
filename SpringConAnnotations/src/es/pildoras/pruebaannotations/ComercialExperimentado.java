@@ -54,7 +54,7 @@ public class ComercialExperimentado implements Empleados{
 	
 	
 	@Autowired
-	@Qualifier("informeFinancieroTrim2") //Beaan id que debe usar
+	@Qualifier("informeFinancieroTrim3") //Beaan id que debe usar
 	private CreacionInformeFinanciero nuevoInforme;
 	
 

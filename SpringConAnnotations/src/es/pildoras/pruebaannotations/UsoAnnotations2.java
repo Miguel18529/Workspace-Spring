@@ -1,5 +1,6 @@
 package es.pildoras.pruebaannotations;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UsoAnnotations2 {
@@ -7,10 +8,14 @@ public class UsoAnnotations2 {
 	public static void main(String[] args) {
 		
 		//Leer el xml de configuración
-		ClassPathXmlApplicationContext contexto = new ClassPathXmlApplicationContext("applicationContext.xml");
+				//ClassPathXmlApplicationContext contexto = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-		//Pedir un bean al contenedor
+		//Leer el class de configuración
 		
+		AnnotationConfigApplicationContext contexto = new AnnotationConfigApplicationContext(EmpleadosConfig.class);
+		
+		//Pedir un bean al contenedor
+		/*
 		Empleados Antonio = contexto.getBean("ComercialExperimentado", Empleados.class);
 		
 		Empleados Lucia = contexto.getBean("ComercialExperimentado", Empleados.class);
@@ -26,6 +31,20 @@ public class UsoAnnotations2 {
 			System.out.println(Antonio + "\n" + Lucia);
 		}
 		
+		System.out.println(Antonio.getInforme());
+		*/
+		
+		//Pedir un bean al contenedor
+	
+		/*Empleados empleado = contexto.getBean("directorFinanciero", Empleados.class);
+		
+		System.out.println(empleado.getTareas());
+		System.out.println(empleado.getInforme());
+		*/
+		
+		DirectorFinanciero empleado = contexto.getBean("directorFinanciero", DirectorFinanciero.class);
+		System.out.println("Email del director: " + empleado.getEmail());
+		System.out.println("Empresa: " + empleado.getNombreEmpresa());
 		//Cerrar el contexto
 		contexto.close();
 		
